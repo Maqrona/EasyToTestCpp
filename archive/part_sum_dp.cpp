@@ -1,11 +1,12 @@
+/**
+ * N 個の整数を適当に足して W にすることができるか.
+ */
+
 #include <bits/stdc++.h>
 
 #define PRINT(var) \
     std::cout << #var << ": " << var << std::endl;
 
-/**
- * N 個の整数を適当に足して W にすることができるか.
- */
 bool func(int i, int w, const std::vector<int> &array) {
 
     if (i == 0) {

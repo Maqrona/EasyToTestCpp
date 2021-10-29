@@ -1,3 +1,6 @@
+/**
+ * フィボナッチ数列の第 n 項をもとめる
+ */ 
 #include <bits/stdc++.h>
 
 #define PRINT(var) \

@@ -1,3 +1,6 @@
+/**
+ *  最大公約数を求める
+ */
 #include <bits/stdc++.h>
 
 #define PRINT(var) \
