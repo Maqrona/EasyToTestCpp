@@ -9,6 +9,11 @@
 #define PRINT(var) \
     std::cout << #var << ": " << var << std::endl;
 
+template <typename T>
+void ch_min(T& a, T b) {
+    if (a > b) a = b;
+}
+
 // クソでか数の型
 using big_t = long long;
 
@@ -27,13 +32,10 @@ int main() {
     dp[0] = 0;
 
     for (int i = 1; i < N; i++) {
-        if (i == 1)
-            dp[i] = std::abs(h[i] - h[i-1]);
-        else
-            dp[i] = std::min(
-                dp[i-1] + std::abs(h[i] - h[i-1]),
-                dp[i-2] + std::abs(h[i] - h[i-2])
-            );
+        ch_min(dp[i], dp[i-1] + std::abs(h[i] - h[i-1]));
+        if (i > 1) {
+            ch_min(dp[i], dp[i-2] + std::abs(h[i] - h[i-2]));
+        }
     }
 
     std::cout << dp[N-1] << std::endl;
